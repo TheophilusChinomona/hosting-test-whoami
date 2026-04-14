@@ -1,0 +1,14 @@
+services:
+  whoami:
+    image: traefik/whoami
+    restart: unless-stopped
+    networks: [traefik-public]
+    labels:
+      traefik.enable: "true"
+      traefik.docker.network: traefik-public
+      traefik.http.routers.whoami.rule: Host(`whoami-hosting.theochinomona.tech`)
+      traefik.http.routers.whoami.entrypoints: web
+
+networks:
+  traefik-public:
+    external: true
