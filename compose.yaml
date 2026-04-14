@@ -12,3 +12,5 @@ services:
 networks:
   traefik-public:
     external: true
+
+# Phase 6 push test marker: 1
